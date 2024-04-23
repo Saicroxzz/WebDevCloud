@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="Css/index.css">
+    <!-- Asegúrate de incluir el siguiente link para los iconos de ionicons si aún no lo has hecho -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/vue/dist/ionicons/ionicons.css">
+</head>
+<body>
+    <section>
+        <form>
+            <h1>Inicio de Sesion</h1>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <label for="edtuser">Usuario</label>
+                <input id="edtuser" type="email" required>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <label for="edtpassword">Contraseña</label>
+                <input id="edtpassword" type="password" required>
+            </div>
+            <button id="loginbtn">Iniciar Sesion</button>
+            <!-- Botones para inicio de sesión con Facebook y Google -->
+            <button type="button" class="social-login facebook-login">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook logo"> Iniciar sesión con Facebook
+            </button>
+            <button type="button" class="social-login google-login">
+                <img src="https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png" alt="Google logo"> Iniciar sesión con Google
+            </button>
+            <div class="register">
+                <p>¿No tienes una cuenta con nosotros? <a href="#">Registrar</a></p>
+            </div>
+        </form>
+    <script type="module" src="Controller/authentication.js"></script>
+    </section>
+</body>
+</html>

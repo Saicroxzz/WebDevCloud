@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Bienvenido</title>
+    <style>
+        body {
+            background-color: #333333;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center">
+            <h3 class="mb-4">Bienvenido</h3>
+            <button id="logoutBtn" type="button" class="btn btn-primary">
+                Cerrar sesión
+            </button>
+        </div>
+        <div class="text-center mt-3">
+            <button
+                type="button"
+                class="btn btn-secondary"
+                data-toggle="modal"
+                data-target="#confirmDeleteModal"
+            >
+                Administrar Cuenta
+            </button>
+        </div>
+    </div>
+    <div
+        class="modal fade"
+        id="confirmDeleteModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="confirmDeleteModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">
+                        Confirmar Eliminación
+                    </h5>
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Bienvenido a la administración de usuario</p>
+                </div>
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                    >
+                        Cancelar
+                    </button>
+                    <button
+                        id="btnOpenConfirmation"
+                        type="button"
+                        class="btn btn-danger"
+                    >
+                        Eliminar Usuario
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+        class="modal fade"
+        id="confirmUserDeleteModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="confirmUserDeleteModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmUserDeleteModalLabel">
+                        Confirmación de Eliminación
+                    </h5>
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar tu cuenta de usuario?</p>
+                </div>
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                    >
+                        No
+                    </button>
+                    <button id="btnDeleteUser" type="button" class="btn btn-danger">
+                        Sí
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../Controller/home.js"></script>
+    <script>
+        document.getElementById('btnOpenConfirmation').addEventListener('click', function () {
+            $('#confirmDeleteModal').modal('hide');
+            $('#confirmUserDeleteModal').modal('show');
+        });
+
+        document.getElementById('btnDeleteUser').addEventListener('click', function () {
+            $('#confirmUserDeleteModal').modal('hide');
+            // Agregar un retraso de 2 segundos antes de redirigir
+            setTimeout(() => {
+                window.location.href = '../copyform.html'; // Asegúrate de que esta sea la URL correcta a donde quieres redirigir
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
